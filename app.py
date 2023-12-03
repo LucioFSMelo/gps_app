@@ -6,10 +6,7 @@ st.markdown("# Introdução 🎈")
 st.sidebar.markdown("Página de Introdução")
 
 st.title("Mapeamento e GPS :earth_americas: ")
-st.write('EREFEM PRESIDENTE CASTELO BRANCO')
-st.write('DISCIPLINA: Mapeamento e GPS')
-st.write('PROFESSORA TITULAR: SANDRA GONÇALVES')
-st.write('PROFESSOR CONVIDADO: LUCIO FLAVIO')
+st.write("Esta aplicação é pode ser trabalhada de modo interdisciplinar")
 
 st.text('O que é catografia?')
 st.markdown('A palavra cartografia tem origem na língua portuguesa, tendo sido registrada pela primeira vez em 1839 numa correspondência \n,' 
