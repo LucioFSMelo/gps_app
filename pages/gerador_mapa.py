@@ -5,14 +5,12 @@ import folium
 from streamlit_folium import folium_static
 from geopy.distance import geodesic
 
-st.markdown("# Gerador de mapas 🎈")
-st.sidebar.markdown("Gerando mapa")
 
 def calculate_distance(coord1, coord2):
     return geodesic(coord1, coord2).kilometers
 
 
-def main():
+def gerando_mapa():
     st.title("Aplicação prática com latitude e longitude")
 
     # Input para inserir as coordenadas
@@ -56,9 +54,3 @@ def main():
         # Exibindo o mapa no Streamlit usando streamlit_folium
         folium_static(mapa)
     
-
-
-
-
-if __name__ == "__main__":
-    main()
