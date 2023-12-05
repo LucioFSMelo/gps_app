@@ -32,11 +32,11 @@ def carregar_shapefile():
         folium.GeoJson(gdf).add_to(m)
         folium_static(m)
 
-def main():
+def espacial():
     st.title("Aplicação GeoPandas e Streamlit")
 
     # Carregar e exibir Shapefile
     carregar_shapefile()
 
 if __name__ == "__main__":
-    main()
+    espacial()

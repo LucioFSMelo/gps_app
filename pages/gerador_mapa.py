@@ -54,3 +54,5 @@ def gerando_mapa():
         # Exibindo o mapa no Streamlit usando streamlit_folium
         folium_static(mapa)
     
+if __name__ == "__main__":
+    gerando_mapa()

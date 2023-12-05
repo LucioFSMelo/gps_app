@@ -91,7 +91,7 @@ def mostrar_informacoes_pais(pais_selecionado):
     st.sidebar.write(f"**População:** {info_pais['pop_est'].values[0]}")
     st.sidebar.write(f"**Área:** {info_pais['area'].values[0]} km²")
 
-def main():
+def exibir():
     st.title("Calculadora de Distância, Consumo e Custo de Combustível e Tempo Estimado")
 
     # Input para inserir o nome do local da primeira localização
@@ -166,4 +166,4 @@ def main():
         mostrar_informacoes_pais(pais_selecionado)
 
 if __name__ == "__main__":
-    main()
+    exibir()

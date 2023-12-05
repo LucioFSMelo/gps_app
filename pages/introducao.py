@@ -71,3 +71,5 @@ def conteudo():
         * :red[**Finalidade:**] Mapas são criados para finalidades específicas, como topografia, navegação, análise climática, planejamento urbano, entre outros.""" 
 
     st.markdown(definicao)
+if __name__ == "__main__":
+    conteudo()
