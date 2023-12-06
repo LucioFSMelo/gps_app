@@ -3,7 +3,6 @@ from PIL import Image
 
 def conteudo():
     st.markdown("# Introdução 🎈")
-    st.sidebar.markdown(":blue[**Você está aqui:**] Página de Introdução")
 
     st.title("Mapeamento e GPS :earth_americas: ")
     st.markdown("### Esta aplicação é pode ser trabalhada de modo interdisciplinar")

@@ -1,13 +1,15 @@
+import sys
+sys.path.append(r"C:\Users\luciu\Workspace\App_Gps\gps_app")
 import streamlit as st
-import pages.introducao as introducao
-import pages.gerador_mapa as gerador_mapa
-import pages.geo_espacial as geo_espacial
-import pages.rotas as rotas
+from pages import introducao, gerador_mapa, rotas, geo_espacial
 
-
+print(sys.path)
 
 st.sidebar.title("MENU")
-page_acao = st.sidebar.selectbox(['Introdução', 'Gerar Mapa', 'Rotas', 'Geoespacial'])
+st.sidebar.markdown('### Visite as páginas na seguinte ordem: \
+                    Introdução, Gerar Mapas, Rotas e Geoespacial')
+
+page_acao = st.sidebar.selectbox("Escolha uma página", ('Introdução', 'Gerar Mapa', 'Rotas', 'Geoespacial'))
     
 if page_acao == 'Introdução':
         introducao.conteudo()
