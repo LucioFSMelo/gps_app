@@ -1,42 +1,58 @@
 import streamlit as st
-import geopandas as gpd
+import pydeck as pdk
 import folium
 from streamlit_folium import folium_static
 
-def carregar_shapefile():
-    # Permitir ao usuário fazer upload de um Shapefile
-    shapefile_path = "dataset/mtaflorane.shp"
+# Dados fictícios para ilustração
+dados_3d = [
+    {'position': [0, 0, 0], 'color': [255, 0, 0]},
+    {'position': [10, 10, 0], 'color': [0, 255, 0]},
+    {'position': [20, 0, 0], 'color': [0, 0, 255]},
+]
 
-    if shapefile_path:
-        # Ler o Shapefile com GeoPandas
-        gdf = gpd.read_file(shapefile_path)
+# Função para criar visualização 3D com pydeck
+def criar_visualizacao_3d():
+    layer = pdk.Layer(
+        'ScatterplotLayer',
+        data=dados_3d,
+        get_position='position',
+        get_radius=200,
+        get_fill_color='color',
+    )
 
-        # Definir um CRS se não estiver definido
-        if gdf.crs is None:
-            # Substitua 'EPSG:4326' pelo CRS desejado EPSG:4671
-            gdf = gdf.to_crs(epsg=32723)
+    view_state = pdk.ViewState(
+        longitude=-34.89130304634319,
+        latitude=-7.957734131420149,
+        zoom=1,
+        pitch=45,
+        bearing=0
+    )
 
-        # Exibir as informações básicas sobre o GeoDataFrame
-        st.subheader("Informações do Shapefile:")
-        st.write(f"Total de Registros: {len(gdf)}")
-        st.write("Esquema (Schema):")
-        st.write(gdf.dtypes)
+    r = pdk.Deck(layers=[layer], initial_view_state=view_state)
+    st.pydeck_chart(r)
 
-        # Exibir o GeoDataFrame em uma tabela
-        st.subheader("Visualização do GeoDataFrame:")
-        st.write(gdf)
+# Função para criar mapa interativo com Folium
+def criar_mapa_folium():
+    m = folium.Map(location=[-7.957734131420149, -34.89130304634319], zoom_start=2)
 
-        # Exibir o GeoDataFrame no mapa usando Folium
-        st.subheader("Visualização no Mapa:")
-        m = folium.Map(location=[gdf.geometry.centroid.y.mean(), gdf.geometry.centroid.x.mean()], zoom_start=10)
-        folium.GeoJson(gdf).add_to(m)
-        folium_static(m)
+    # Adicione marcadores ao mapa (pode ser personalizado com seus próprios dados)
+    folium.Marker([-7.957734131420149, -34.89130304634319], popup='Marcador 1').add_to(m)
+    folium.Marker([-7.968104509921116, -34.890315993333395], popup='Marcador 2').add_to(m)
+
+    return m
+
 
 def espacial():
-    st.title("Aplicação GeoPandas e Streamlit")
+    st.title('Demonstração de Realidade Aumentada e Mapeamento 3D')
 
-    # Carregar e exibir Shapefile
-    carregar_shapefile()
+    # Seção de visualização 3D com pydeck
+    st.header('Visualização 3D com pydeck')
+    criar_visualizacao_3d()
+
+    # Seção de mapa interativo com Folium
+    st.header('Mapa Interativo com Folium')
+    folium_map = criar_mapa_folium()
+    folium_static(folium_map)
 
 if __name__ == "__main__":
     espacial()

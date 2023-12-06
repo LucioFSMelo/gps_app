@@ -7,7 +7,6 @@ from geopy.distance import geodesic
 import pandas as pd
 import plotly.express as px
 
-st.sidebar.markdown("Traçando Localização/Rotas")
 st.markdown("# Traçando Localização/Rotas")
 
 st.markdown("Você já deve ter notado que é bastante chato estarmos colocando as coordenadas. \n"

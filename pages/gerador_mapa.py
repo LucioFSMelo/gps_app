@@ -12,7 +12,8 @@ def calculate_distance(coord1, coord2):
 
 def gerando_mapa():
     st.title("Aplicação prática com latitude e longitude")
-
+    st.text("Vamos pensar na latitude e longitude como as coordenadas do plano cartesiano")
+    
     # Input para inserir as coordenadas
     latitude = st.number_input("Insira a Latitude:")
     longitude = st.number_input("Insira a Longitude:")
