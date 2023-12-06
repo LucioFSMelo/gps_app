@@ -5,8 +5,7 @@ def conteudo():
     st.markdown("# Introdução 🎈")
 
     st.title("Mapeamento e GPS :earth_americas: ")
-    st.markdown("### Esta aplicação é pode ser trabalhada de modo interdisciplinar")
-
+    
     st.markdown('### O que é catografia?')
     st.markdown('''A palavra cartografia tem origem na língua portuguesa, tendo sido registrada pela primeira vez em \
                 1839 numa correspondência, indicando a ideia de um traçado de mapas e cartas. Hoje entende­mos \
@@ -97,5 +96,7 @@ def conteudo():
         entre outros.""" 
 
     st.markdown(definicao)
+
+    
 if __name__ == "__main__":
     conteudo()

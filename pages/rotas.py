@@ -7,10 +7,6 @@ from geopy.distance import geodesic
 import pandas as pd
 import plotly.express as px
 
-st.markdown("# Traçando Localização/Rotas")
-
-st.markdown("Você já deve ter notado que é bastante chato estarmos colocando as coordenadas. \n"
-            "Agora vamos fazer diferente, aqui iremos inserir o nome dos locais de origem e destino.")
 
 geolocator = Nominatim(user_agent="app_geocode")
 
@@ -92,6 +88,8 @@ def mostrar_informacoes_pais(pais_selecionado):
 
 def exibir():
     st.title("Calculadora de Distância, Consumo e Custo de Combustível e Tempo Estimado")
+    st.markdown("Você já deve ter notado que é bastante chato estarmos colocando as coordenadas. \n"
+            "Agora vamos fazer diferente, aqui iremos inserir o nome dos locais de origem e destino.")
 
     # Input para inserir o nome do local da primeira localização
     st.write("### Origem")
