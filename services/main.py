@@ -1,7 +1,7 @@
 import sys
 sys.path.append(r"C:\Users\luciu\Workspace\App_Gps\gps_app")
 import streamlit as st
-from pages import introducao, gerador_mapa, rotas, geo_espacial, home
+from pages import introducao, gerador_mapa, rotas, home
 
 #print(sys.path)
 
@@ -21,6 +21,3 @@ if page_acao == 'Gerar Mapa':
 
 if page_acao == 'Rotas':
         rotas.exibir()
-
-if page_acao == 'Geoespacial':
-        geo_espacial.espacial()
