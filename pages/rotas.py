@@ -3,8 +3,6 @@ from streamlit_folium import folium_static
 import folium
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
-import pandas as pd
-import plotly.express as px
 
 
 geolocator = Nominatim(user_agent="app_geocode")
@@ -21,7 +19,7 @@ def calculate_fuel_cost(distance, fuel_price, fuel_efficiency):
 
 
 def exibir():
-    st.title("Calculadora de Distância, Consumo e Custo de Combustível e Tempo Estimado")
+    st.title("Calculadora de Distância, Consumo e Custo de Combustível")
     st.markdown("Você já deve ter notado que é bastante chato estarmos colocando as coordenadas. \n"
             "Agora vamos fazer diferente, aqui iremos inserir o nome dos locais de origem e destino.")
 
