@@ -8,7 +8,7 @@ from pages import introducao, gerador_mapa, rotas, home
 
 st.sidebar.title("MENU")
 
-page_acao = st.sidebar.selectbox("Escolha uma página", ('Home','Introdução', 'Gerar Mapa', 'Rotas', 'Geoespacial'))
+page_acao = st.sidebar.selectbox("Escolha uma página", ('Home','Introdução', 'Gerar Mapa', 'Rotas'))
 
 if page_acao == 'Home':
         home.home()

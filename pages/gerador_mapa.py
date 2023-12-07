@@ -4,6 +4,7 @@ import streamlit as st
 import folium
 from streamlit_folium import folium_static
 from geopy.distance import geodesic
+from PIL import Image
 
 
 def calculate_distance(coord1, coord2):
@@ -13,6 +14,19 @@ def calculate_distance(coord1, coord2):
 def gerando_mapa():
     st.title("Aplicação prática com latitude e longitude")
     st.text("Vamos pensar na latitude e longitude como as coordenadas do plano cartesiano")
+
+    image = Image.open('image/plano_cartesiano.jpg')
+    st.image(image)
+
+    st.markdown("""Observe 🔍 que o plano cartesiano é dividido em quatro quadrantes. E da mesma forma temos o globo \
+                terrestre assim dividido, é o chamado de cartas cartográficas.  
+                Agora vamos nos divertir inserindo algumas coordenadas para gerar uma localização em um mapa.""")
+    
+    st.markdown('''**Não sabe quais coordenadas inserir?** não tem problema, escolha entre essas aqui:  
+                **Latitude:** {-7.954163940433418, -7.957734131420149, -7.961601803229094, -7.968104509921116}  
+                **Longitude:** {-34.89263342198947, -34.89130304634319, -34.88623903581863, -34.890315993333395}  
+                :red[**Lembre-se:**] um ponto é um par ordenado (x, y), logo você deve inserir um valor para \
+                latitude e outro para longitude. Boa Sorte!''')
     
     # Input para inserir as coordenadas
     latitude = st.number_input("Insira a Latitude:")

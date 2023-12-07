@@ -63,7 +63,7 @@ def exibir():
             # Botão para calcular custo de combustível e tempo estimado
             fuel_ida = calculate_fuel(distance, fuel_efficiency)
             fuel_ida_volta = 2 * calculate_fuel(distance, fuel_efficiency)
-            fuel_cost = calculate_fuel_cost(distance, fuel_price, fuel_efficiency)
+            fuel_cost = 2 * calculate_fuel_cost(distance, fuel_price, fuel_efficiency)
 
 
             st.write(f"Consumo estimado de combustível ida: {fuel_ida:.2f} litros")
