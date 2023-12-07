@@ -1,8 +1,8 @@
 import sys
 #sys.path.append(r"C:\Users\luciu\Workspace\App_Gps\gps_app")
-sys.path.insert(0, r'C:\Users\luciu\Workspace\App_Gps\gps_app')
+#sys.path.insert(0, r'C:\Users\luciu\Workspace\App_Gps\gps_app')
 import streamlit as st
-from ..pages import introducao, gerador_mapa, rotas, home
+from pages import introducao, gerador_mapa, rotas, home
 
 #print(sys.path)
 
